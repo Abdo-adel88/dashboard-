@@ -1,0 +1,47 @@
+.h-full-component{
+    height: 100vh;
+}
+.w-side-nav{
+    width: 90%;
+    margin: auto;
+}
+.bg-blue-nav{
+    background-color: #212631 ;
+    
+}
+.hover-item:hover{
+background-color: rgba(255, 255, 255, 0.279);
+}
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16.6667%; /* Adjust to match col-2 width */
+    height: 100vh; /* Full height */
+    background-color: #212631; /* Example background color */
+    overflow: hidden; /* Prevent any overflow */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+/* Main Content */
+.content {
+    margin-left: 16.6667%; /* Matches sidebar width */
+     /* Adjust to match col-10 width */
+    overflow-y: auto; /* Enables scrolling */
+    padding: 1rem; /* Optional padding */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Optional Styling */
+.bg-blue-nav {
+    background-color: #212631; /* Example background color */
+}
+
+h2 {
+    color: #fff;
+    margin: 0;
+}
+.mt-aline{
+    margin-top: 10px;
+}

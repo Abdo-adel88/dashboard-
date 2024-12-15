@@ -1,0 +1,210 @@
+/* تخصيص شريط التمرير في Firefox */
+
+.main-content {
+    flex-grow: 1;
+    padding: 14px;
+}
+
+/* إضافة تأثير hover على td */
+.overflow-hidden {
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0;
+    
+}
+
+tr {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center;
+}
+
+tr:hover {
+    transform: scale(1.005);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* لإخفاء أي تجاوز أفقي */
+p-table {
+    max-width: 100%;
+    overflow-x: hidden;
+    table-layout: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.custom-table th {
+    background-color: #20232a;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-table td {
+    padding: 10px;
+    background-color: #282c34;
+    color: #fff;
+    border-bottom: 1px solid #444;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-status {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* شارة النشاط */
+.user-activity {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: 5px;
+    display: inline-block;
+    left: 10%;
+}
+
+/* لون الحالة */
+.user-activity.onlin {
+    background-color: #28a745;
+    /* أخضر */
+    color: white;
+}
+
+.user-activity.offlin {
+    background-color: #dc3545;
+    /* أحمر */
+    color: white;
+}
+
+
+.usage-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.online {
+    background-color: rgb(0, 179, 0) !important;
+    color: white !important;
+    width: 70px !important;
+    height: 38px !important;
+    padding: 10px;
+    text-align: center;
+}
+
+.offline {
+    background-color: rgb(253, 14, 14) !important;
+    color: white !important;
+    width: 70px !important;
+    height: 38px !important;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* مسافة صغيرة بين النص وشريط التقدم */
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #fff;
+    /* لون النص */
+}
+
+
+
+
+::-webkit-scrollbar-thumb {
+    background: #484f61 !important;
+}
+
+:host ::ng-deep .p-progressbar-label {
+    display: none !important;
+}
+
+:host ::ng-deep .custom-progress-bar .p-progressbar {
+    background-color: #2d2f36 !important;
+    border-radius: 3px !important;
+}
+:host ::ng-deep .p-datatable>.p-datatable-wrapper {
+    overflow: hidden;
+    border-radius: 12px !important;
+} 
+
+
+
+
+tr {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center; /* يبقي التكبير في منتصف العنصر */
+}
+
+tr:hover {
+    transform: scale(1.3); /* تقليل نسبة التكبير لتجنب تمدد كبير */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+    display: none; /* إخفاء شريط التمرير في المتصفحات التي تدعمه */
+}
+
+:host ::ng-deep p-table {
+    overflow-x: hidden; /* منع التمرير الأفقي */
+    max-width: 100%; /* ضمان عرض الجدول لا يتجاوز الحاوية */
+    table-layout: fixed;
+    border-radius: 55px !important; /* تثبيت عرض الأعمدة */
+}
+.custom-table td {
+    white-space: nowrap; /* منع الالتفاف */
+    text-overflow: ellipsis; /* اختصار النصوص الطويلة بـ ... */
+    overflow: hidden; /* إخفاء أي محتوى زائد */
+}
+tr:hover {
+    transform: scale(1.001); /* تقليل التكبير بشكل أكبر */
+}
+
+.text-center {
+    text-align: center;
+  }
+  
+  .text-light {
+    color: #bbb;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  

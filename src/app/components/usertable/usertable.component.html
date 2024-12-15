@@ -1,0 +1,63 @@
+<div class="overflow-hidden w-full h-fit main-content border-round">
+    <!-- عرض الجدول فقط إذا كان هناك عناصر -->
+    <p-table *ngIf="filteredUsers.length > 0; else notFound" [value]="filteredUsers"
+             class="custom-table w-full h-fit overflow-x-hidden border-round border-round-3xl">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>User</th>
+                <th>Country</th>
+                <th>Usage</th>
+                <th>Payment Method</th>
+                <th>Activity</th>
+                <th>Activities</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr class="cursor-pointer">
+                <td>
+                    <div class="user-info relative">
+                        <img [src]="user.img" alt="user image" class="user-image" />
+                        <div class="user-activity absolute bottom-0" [ngClass]="user.activities ? 'onlin' : 'offlin'">
+                        </div>
+                        <div>
+                            <div class="user-name">{{ user.name }}</div>
+                            <div class="user-status">{{ user.status }}</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <i [class]="'pi pi-flag ' + user.countryIcon"></i>
+                </td>
+                <td>
+                    <div class="progress-container">
+                        <div class="progress-header">
+                            <span>{{ user.usage }}%</span>
+                            <span>Jun 11, 2023 - Jul 10, 2023</span>
+                        </div>
+                        <p-progressBar [value]="user.usage" [style]="{ height: '6px' }"
+                            [styleClass]="'custom-progress-bar'">
+                        </p-progressBar>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <i [class]="'pi ' + user.paymentIcon"></i>
+                    </div>
+                </td>
+                <td>{{ user.activity }}</td>
+                <td>
+                    <div class="border-round" [ngClass]="{'online': user.activities, 'offline': !user.activities}">
+                        {{ user.activities ? 'Online' : 'Offline' }}
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <!-- قالب الرسالة "Not Found" -->
+    <ng-template #notFound>
+        <div class="flex justify-content-center align-items-center h-full">
+            <p class="text-light text-center">No results found</p>
+        </div>
+    </ng-template>
+</div>

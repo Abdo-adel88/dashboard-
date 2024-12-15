@@ -1,0 +1,17 @@
+<div class="main-content" style="color: white;">
+    <div class="header flex justify-content-between align-content-center mb-4">
+        <h2>{{ currentSection }}</h2>
+        <div class="header-icons flex align-items-center">
+            <i class="pi pi-bell mr-3" style="font-size: 1.5rem; cursor: pointer;"></i>
+            <i class="pi pi-envelope mr-3" style="font-size: 1.5rem; cursor: pointer;"></i>
+            <i class="pi pi-moon" style="font-size: 1.5rem; cursor: pointer;"></i>
+            <img src="assets/imgs/1.jpg" alt="User Avatar" class="ml-3"
+                style="border-radius: 50%; width: 40px; height: 40px;" />
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="text-light mb-4">
+    <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+</div>
