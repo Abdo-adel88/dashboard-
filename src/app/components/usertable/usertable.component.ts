@@ -5,7 +5,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { SharedService } from 'src/app/service/shared.service';
 @Component({
   selector: 'app-usertable',
-  
+  standalone: true,
   imports: [CommonModule,TableModule,ProgressBarModule],
   templateUrl: './usertable.component.html',
   styleUrls: ['./usertable.component.css'],
