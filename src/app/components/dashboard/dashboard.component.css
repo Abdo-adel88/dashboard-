@@ -1,47 +1,94 @@
-.h-full-component{
-    height: 100vh;
+:root {
+  --bg-color: #212631; /* Default for dark mode */
+  --text-color: #fff;
 }
-.w-side-nav{
-    width: 90%;
-    margin: auto;
+
+.light-mode {
+  --bg-color: #f5f5f5; /* Light mode background */
+  --text-color: #000 ;
 }
-.bg-blue-nav{
-    background-color: #212631 ;
-    
+
+.bg-blue-nav,
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
 }
-.hover-item:hover{
-background-color: rgba(255, 255, 255, 0.279);
+
+
+.sidebar {
+  background-color: var(--bg-color);
+  color: var(--text-color) !important;
+}
+
+.content {
+  background-color: var(--bg-color);
+  color: var(--text-color) !important;
+}
+.text-white {
+    color: var(--text-color) !important;
+  }
+.h-full-component {
+  height: 100vh;
+}
+.w-side-nav {
+  width: 100%;
+  margin: auto;
+  margin: 0;
+}
+
+.hover-item:hover {
+  background-color: rgba(92, 92, 92, 0.279);
 }
 /* Sidebar */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 16.6667%; /* Adjust to match col-2 width */
-    height: 100vh; /* Full height */
-    background-color: #212631; /* Example background color */
-    overflow: hidden; /* Prevent any overflow */
-    z-index: 1000; /* Ensure it's on top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16.6667%; /* Adjust to match col-2 width */
+  height: 100vh; /* Full height */
+  /* Example background color */
+  overflow: hidden; /* Prevent any overflow */
+  z-index: 1000; /* Ensure it's on top */
+  color: var(--text-color) !important;
 }
 
 /* Main Content */
 .content {
-    margin-left: 16.6667%; /* Matches sidebar width */
-     /* Adjust to match col-10 width */
-    overflow-y: auto; /* Enables scrolling */
-    padding: 1rem; /* Optional padding */
-    box-sizing: border-box; /* Include padding in width/height */
-}
-
-/* Optional Styling */
-.bg-blue-nav {
-    background-color: #212631; /* Example background color */
+  margin-left: 16.6667%; /* Matches sidebar width */
+  background-color: var(--bg-df);/* Adjust to match col-10 width */
+  overflow-y: auto; /* Enables scrolling */
+  padding: 1rem; /* Optional padding */
+  box-sizing: border-box; /* Include padding in width/height */
+  padding: 0px !important;
 }
 
 h2 {
-    color: #fff;
-    margin: 0;
+  color: #fff;
+  margin: 0;
 }
-.mt-aline{
-    margin-top: 10px;
+.mt-aline {
+  margin-top: 10px;
+}
+.header {
+  border-right: #cccccca4 0.5px solid;
+}
+.logo-header {
+  border-bottom: #cccccca4 0.5px solid;
+}
+.p-logo {
+  padding: 14px;
+}
+.dashmaster-logo {
+  font-family: "Poppins", sans-serif; /* خط عصري */
+  font-size: 1.7rem; /* حجم النص */
+  font-weight: 600; /* وزن خفيف لـ Dash */
+  margin-left: 10px; /* مسافة بين النص والصورة */
+  color: #00d1ff; /* لون أساسي متناسق مع الأيقونة */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* ظل النص */
+}
+
+.hr {
+  margin-top: 5px;
+  border-bottom: #cccccca4 0.5px solid;
+  background-color: rgb(33 38 49);
 }

@@ -10,12 +10,57 @@
 @import "~primeicons/primeicons.css";
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #chart-container {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+:root {
+  --bg-color: #212631;
+  /* Default for dark mode */
+  --bg-df: rgb(29 34 43);
+  --bg-th: rgb(40 45 55);
+  --bg-td: rgb(33 38 49);
+  --bg-paginator: #2d2f36;
+  --text-color: #fff;
+  --color-progres: #fff;
+  --text-user: #ddd;
+  --hover-color: rgba(255, 255, 255, 0.7);
+  --search-color: #16171d;
+  --search-text: #bdbecb;
+}
+
+.light-mode {
+  --bg-color: #f5f5f5;
+  --bg-df: #ebebeb;
+  --bg-th: #dddddd;
+  --bg-td: #f5f5f5;
+  --text-color: #000;
+  --text-user: #000;
+  --color-progres: #b6b6b6;
+  --bg-paginator: #dddddd;
+  --hover-color: rgba(0, 0, 0, 0.7);
+  --search-color:#fff;
+  --search-text: #4b4b4b;
+}
+
+/* استخدام المتغيرات في الأنماط العامة */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.hover-item:hover {
+  background-color: var(--hover-color);
+}
+
+/* أنماط إضافية للأقسام */
+.header {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-bottom: var(--hover-color) 0.5px solid;
 }

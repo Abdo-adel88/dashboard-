@@ -1,7 +1,11 @@
-<div class="overflow-hidden w-full h-fit main-content border-round">
+<div class="overflow-hidden w-full h-fit main-content border-round-top-3xl">
     <!-- عرض الجدول فقط إذا كان هناك عناصر -->
-    <p-table *ngIf="filteredUsers.length > 0; else notFound" [value]="filteredUsers"
-             class="custom-table w-full h-fit overflow-x-hidden border-round border-round-3xl">
+    <p-table *ngIf="filteredUsers.length > 0; else notFound"
+             [value]="filteredUsers"
+             [paginator]="filteredUsers.length > 5"
+             [rows]="6"
+            
+             class="custom-table w-full h-fit overflow-x-hidden   border-round-top-3xl">
         <ng-template pTemplate="header">
             <tr>
                 <th>User</th>
@@ -26,7 +30,7 @@
                     </div>
                 </td>
                 <td>
-                    <i [class]="'pi pi-flag ' + user.countryIcon"></i>
+                    <span>{{ user.countryIcon }}</span>
                 </td>
                 <td>
                     <div class="progress-container">
@@ -41,7 +45,8 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <i [class]="'pi ' + user.paymentIcon"></i>
+                        <span>{{ user.paymentIcon }}</span>
+                        
                     </div>
                 </td>
                 <td>{{ user.activity }}</td>
@@ -57,7 +62,7 @@
     <!-- قالب الرسالة "Not Found" -->
     <ng-template #notFound>
         <div class="flex justify-content-center align-items-center h-full">
-            <p class="text-light text-center">No results found</p>
+            <p class=" text-2xl text-center">No results found</p>
         </div>
     </ng-template>
 </div>

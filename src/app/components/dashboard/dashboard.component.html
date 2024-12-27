@@ -1,43 +1,84 @@
-<div class="bg-blue-nav">
-    <div class="flex">
-        <!-- Sidebar Section -->
-        <div class="col-2 sidebar h-full-component border-right-1 border-white border-50">
-            <div class="flex align-items-center mt-aline ">
-                <img width="50" height="50" class="border-circle" src="assets/imgs/icons8-dashboard-80.png" alt="">
-                <div>
-                    <h2 class="text-white ml-2">DashMaster</h2>
-                </div>
-            </div>
-            <div class="flex align-items-center justify-content-between flex-column h-full">
-                <div class="w-side-nav my-0">
-                    <div (click)="sidenav(true)"
-                        class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex">
-                        <h4><i class="pi pi-chart-line p-mr-2"></i> Dashboard</h4>
-                    </div>
-                    <div (click)="sidenav(false)"
-                        class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex">
-                        <h4><i class="pi pi-users p-mr-2"></i> Users</h4>
-                    </div>
-                </div>
-            </div>
+
+  <div class="flex">
+    <!-- Sidebar Section -->
+    <div *ngIf="sideNavSec" class="col-2 sidebar h-full-component header p-0">
+      <div class="logo-header">
+        <div class="p-logo flex align-items-center mt-aline">
+          <img
+            width="50"
+            height="50"
+            src="assets/imgs/password_16136868.png"
+            alt=""
+          />
+          <div>
+            <h2 class="dashmaster-logo">DashMast<span>er</span></h2>
+            <!-- <img width="200" height="50"  src="assets/imgs/Screenshot 2024-12-21 155502.png" alt="" /> -->
+          </div>
         </div>
-
-        <!-- Main Content Section -->
-        <div class="col-10 content">
-            <!-- Pass the currentSection to NavBoardComponent -->
-            <app-nav-board [currentSection]="currentSection"></app-nav-board>
-
-            <!-- Dynamic Content Based on SideNav -->
-            <div *ngIf="sideNav">
-                <app-usersdashboard></app-usersdashboard>
-                <app-usertable></app-usertable>
-                <app-traffic-chart></app-traffic-chart>
-            </div>
-            <div *ngIf="!sideNav">
-                <app-search-users></app-search-users>
-                <app-usertable></app-usertable>
-            </div>
+      </div>
+      <div
+        class="flex align-items-center justify-content-between flex-column h-full"
+      >
+        <div class="w-side-nav my-0">
+          <div
+            (click)="sidenav(true)"
+            class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          >
+            <h4><i class="pi pi-chart-line p-mr-2"></i> Dashboard</h4>
+          </div>
+          <div
+            (click)="sidenav(false)"
+            class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          >
+            <h4><i class="pi pi-users p-mr-2"></i> Users</h4>
+          </div>
+          <p class="text-bluegray-700 text-xl font-bold ml-1">Theme</p>
+         
+          <div class="hr"></div>
+          <div
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          (click)="toggleTheme(false)"
+        >
+          <h4><i class="pi pi-sun p-mr-2"></i><span class="ml-1">Light</span></h4>
         </div>
-
+        <div
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          (click)="toggleTheme(true)" 
+        >
+          <h4><i class="pi pi-moon p-mr-2"></i><span class="ml-1">Dark</span></h4>
+        </div>
+        
+        </div>
+      </div>
     </div>
-</div>
+
+    <!-- Main Content Section -->
+    <div
+      class="p-0"
+      [ngClass]="{
+        'col-10 content p-0': sideNavSec,
+        'col-12 p-0': !sideNavSec
+      }"
+    >
+      <!-- Pass the currentSection to NavBoardComponent -->
+      <app-nav-board
+        [currentSection]="currentSection"
+        (sidebarToggle)="toggleSidebar()"
+        
+      ></app-nav-board>
+
+      <!-- Dynamic Content Based on SideNav -->
+      <div>
+        <div class="m-3" *ngIf="sideNavFirst">
+          <app-usersdashboard></app-usersdashboard>
+          <app-usertable [users]="fiveUsers"></app-usertable>
+          <app-traffic-chart></app-traffic-chart>
+        </div>
+        <div class="m-3" *ngIf="!sideNavFirst">
+          <app-search-users></app-search-users>
+          <app-usertable [users]="allUsers"></app-usertable>
+          <app-search-charts></app-search-charts>
+        </div>
+      </div>
+    </div>
+  </div>

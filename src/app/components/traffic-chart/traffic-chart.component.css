@@ -5,14 +5,17 @@
 
 }
 .small-content {
-  padding: 14px;
-  background-color: #1c1e27;
+ 
+  background-color: var(--bg-td);
   border-radius: 8px;
-  color: #fff;
+  color: var(--text-color);
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
+.padding-spasific
+{
+  padding: 14px;
+}
 
 
 .traffic-chart-container h2 {
@@ -34,6 +37,9 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  color: var(--text-color);
+  background-color: var(--bg-th);
+  border-top: #cccccca4 0.5px solid;
 }
 
 .stat-item {
@@ -55,7 +61,7 @@
 .stat-item .progress-bar {
   width: 100%;
   height: 6px;
-  background-color: #333;
+  background-color: #b6b6b6;
   position: relative;
   margin-top: 5px;
   border-radius: 3px;
