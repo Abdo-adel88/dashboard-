@@ -1,0 +1,32 @@
+{
+    "HELLO": "Hello",
+    "WELCOME": "Welcome",
+    "Dashboard": "Dashboard",
+    "Users": "Users",
+    "Theme": "Theme",
+    "Light": "Light",
+    "Dark": "Dark",
+    "Translation": "Translation",
+    "English": "English",
+    "Arabic": "Arabic",
+    "User": "User",
+    "Country": "Country",
+    "Usage": "Usage",
+    "PaymentMethod": "Payment Method",
+    "Activity": "Activity",
+    "Activities": "Activities",
+    "Visits": "Visits",
+    "Unique": "Unique",
+    "Pageviews": "Pageviews",
+    "NewUsers": "New Users",
+    "BounceRate": "Bounce Rate",
+    "Income": "Income",
+    "ConversionRate": "Conversion Rate",
+    "Sessions": "Sessions",
+    "UsageLineChart": "Usage Line Chart",
+    "UsageBarChart": "Usage Bar Chart",
+    "Traffic": "Traffic",
+    "Enterthename": "Enter the name..."
+
+  }
+  

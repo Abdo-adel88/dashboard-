@@ -44,7 +44,7 @@
   --color-progres: #b6b6b6;
   --bg-paginator: #dddddd;
   --hover-color: rgba(0, 0, 0, 0.7);
-  --search-color:#fff;
+  --search-color: #fff;
   --search-text: #4b4b4b;
 }
 
@@ -63,4 +63,67 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   border-bottom: var(--hover-color) 0.5px solid;
+}
+.zain-extralight {
+  font-family: "Zain", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.zain-light {
+  font-family: "Zain", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.zain-regular {
+  font-family: "Zain", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zain-bold {
+  font-family: "Zain", serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+.zain-extrabold {
+  font-family: "Zain", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.zain-black {
+  font-family: "Zain", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.zain-light-italic {
+  font-family: "Zain", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.zain-regular-italic {
+  font-family: "Zain", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.text-90 {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+}
+.text-9 {
+  font-size: 20px !important;
+  display: flex;
+  align-items: center;
+}
+.text-2xxl{
+  font-size: 20px !important;
+  display: flex;
+  align-items: center;
 }

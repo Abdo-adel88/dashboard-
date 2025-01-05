@@ -61,7 +61,9 @@
   color: var(--text-color);
   border-bottom: #cccccca4 0.5px solid;
 }
-
+.p--2{
+padding: 2.5px;
+}
 .sec-header {
   border-bottom: #cccccca4 0.5px solid;
   background-color: var(--bg-color);
@@ -94,4 +96,24 @@
 :host ::ng-deep .p-breadcrumb a:hover {
   color: var(--hover-color) !important;
   text-decoration: none !important;
+}
+.justify-content {
+  justify-content: flex-end !important; /* يجعل المحتوى يتحرك إلى النهاية */
+}
+
+.m-r {
+  margin-right: 17.66666% !important; /* يضيف مسافة إلى اليمين */
+}
+.m-l {
+  margin-left: 2px !important; /* يضيف مسافة إلى اليمين */
+}
+
+.flex-row-reverse {
+  display: flex; /* يضمن استخدام Flexbox */
+  flex-direction: row-reverse; /* يعكس اتجاه العناصر */
+}
+
+
+.d-flex {
+  display: flex; /* لتفعيل تخطيط flexbox */
 }

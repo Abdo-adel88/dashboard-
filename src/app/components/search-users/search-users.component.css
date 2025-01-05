@@ -17,7 +17,7 @@
   border-radius: 12px;
   background-color: var(--search-color);
   outline: none;
-  color: #bdbecb;
+  color: #838383;
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   cursor: text;
   z-index: 0;

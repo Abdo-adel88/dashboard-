@@ -43,23 +43,48 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  
   width: 16.6667%; /* Adjust to match col-2 width */
   height: 100vh; /* Full height */
   /* Example background color */
   overflow: hidden; /* Prevent any overflow */
-  z-index: 1000; /* Ensure it's on top */
+  z-index: 100555555555555555550; /* Ensure it's on top */
   color: var(--text-color) !important;
+}
+.right-0 {
+  right: 0px;
+
+   /* إذا كنت بحاجة إلى هذا */
+}
+
+.left-0 {
+  left: 0px;
+
+   /* إذا كنت بحاجة إلى هذا */
+}
+.margin-0 {
+  margin-left: 0%;
+
+   /* إذا كنت بحاجة إلى هذا */
+}
+
+.margin-16 {
+  margin-left: 16.6667%; 
+
+   /* إذا كنت بحاجة إلى هذا */
 }
 
 /* Main Content */
 .content {
-  margin-left: 16.6667%; /* Matches sidebar width */
   background-color: var(--bg-df);/* Adjust to match col-10 width */
   overflow-y: auto; /* Enables scrolling */
   padding: 1rem; /* Optional padding */
   box-sizing: border-box; /* Include padding in width/height */
   padding: 0px !important;
+}
+.contents {
+  background-color: var(--bg-df);/* Adjust to match col-10 width */
+
 }
 
 h2 {
@@ -71,6 +96,11 @@ h2 {
 }
 .header {
   border-right: #cccccca4 0.5px solid;
+  
+}
+.header-left {
+  border-left: #cccccca4 0.5px solid;
+  
 }
 .logo-header {
   border-bottom: #cccccca4 0.5px solid;
@@ -91,4 +121,35 @@ h2 {
   margin-top: 5px;
   border-bottom: #cccccca4 0.5px solid;
   background-color: rgb(33 38 49);
+}
+/* HTML: <div class="loader"></div> */
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  width: 200px;
+  height: 100px;
+  -webkit-mask: radial-gradient(circle closest-side,#000 94%,#0000) left/20% 100%;
+  background: linear-gradient(#161c28 0 0) left/0% 100% no-repeat #ddd;
+  animation: l17 2s infinite steps(6);
+}
+@keyframes l17 {
+    100% {background-size:120% 100%}
+} */
+ .d-flex-arabic{
+  display: flex !important;
+  justify-content: end !important;
+ }
+ .flex-row {
+  flex-direction: row; /* العنصر الأول على اليسار */
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse; /* العنصر الأول على اليمين */
+}
+
+.d-flex {
+  display: flex; /* لتفعيل المرونة */
+}
+.m-l {
+ margin-left: 8px; /* لتفعيل المرونة */
 }

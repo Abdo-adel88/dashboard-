@@ -1,84 +1,246 @@
+<div class="flex">
+  <!-- Sidebar Section -->
 
-  <div class="flex">
-    <!-- Sidebar Section -->
-    <div *ngIf="sideNavSec" class="col-2 sidebar h-full-component header p-0">
-      <div class="logo-header">
-        <div class="p-logo flex align-items-center mt-aline">
-          <img
-            width="50"
-            height="50"
-            src="assets/imgs/password_16136868.png"
-            alt=""
-          />
-          <div>
-            <h2 class="dashmaster-logo">DashMast<span>er</span></h2>
-            <!-- <img width="200" height="50"  src="assets/imgs/Screenshot 2024-12-21 155502.png" alt="" /> -->
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex align-items-center justify-content-between flex-column h-full"
-      >
-        <div class="w-side-nav my-0">
-          <div
-            (click)="sidenav(true)"
-            class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
-          >
-            <h4><i class="pi pi-chart-line p-mr-2"></i> Dashboard</h4>
-          </div>
-          <div
-            (click)="sidenav(false)"
-            class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
-          >
-            <h4><i class="pi pi-users p-mr-2"></i> Users</h4>
-          </div>
-          <p class="text-bluegray-700 text-xl font-bold ml-1">Theme</p>
-         
-          <div class="hr"></div>
-          <div
-          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
-          (click)="toggleTheme(false)"
-        >
-          <h4><i class="pi pi-sun p-mr-2"></i><span class="ml-1">Light</span></h4>
-        </div>
-        <div
-          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
-          (click)="toggleTheme(true)" 
-        >
-          <h4><i class="pi pi-moon p-mr-2"></i><span class="ml-1">Dark</span></h4>
-        </div>
-        
+  <div
+    *ngIf="sideNavSec"
+    class="col-2 sidebar h-full-component header p-0"
+    [ngClass]="{ 'right-0': isArabicLanguage, 'left-0': !isArabicLanguage ,'header-left': isArabicLanguage}"
+  >
+    <div class="logo-header">
+      <div class="p-logo flex align-items-center mt-aline">
+        <img
+          width="50"
+          height="50"
+          src="assets/imgs/password_16136868.png"
+          alt=""
+        />
+        <div>
+          <h2 class="dashmaster-logo">DashMast<span>er</span></h2>
+          <!-- <img width="200" height="50"  src="assets/imgs/Screenshot 2024-12-21 155502.png" alt="" /> -->
         </div>
       </div>
     </div>
-
-    <!-- Main Content Section -->
     <div
-      class="p-0"
-      [ngClass]="{
-        'col-10 content p-0': sideNavSec,
-        'col-12 p-0': !sideNavSec
-      }"
+      class="flex align-items-center justify-content-between flex-column h-full"
     >
-      <!-- Pass the currentSection to NavBoardComponent -->
-      <app-nav-board
-        [currentSection]="currentSection"
-        (sidebarToggle)="toggleSidebar()"
-        
-      ></app-nav-board>
-
-      <!-- Dynamic Content Based on SideNav -->
-      <div>
-        <div class="m-3" *ngIf="sideNavFirst">
-          <app-usersdashboard></app-usersdashboard>
-          <app-usertable [users]="fiveUsers"></app-usertable>
-          <app-traffic-chart></app-traffic-chart>
+      <div class="w-side-nav my-0">
+        <div
+          (click)="sidenav(true)"
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex text-xs"
+          [ngClass]="{ 'd-flex-arabic': isArabicLanguage }"
+        >
+          <h4
+            class="text-90"
+            [ngClass]="{
+              'flex-row-reverse': isArabicLanguage,
+              'flex-row': !isArabicLanguage
+            }"
+          >
+            <i
+              class="pi pi-chart-line p-mr-2"
+              [ngClass]="{ 'm-l': isArabicLanguage }"
+            ></i
+            ><span
+              class="ml-1"
+              [ngClass]="{
+                'zain-bold': isArabicLanguage,
+                'text-90': isArabicLanguage,
+                'd-flex-arabic': isArabicLanguage
+              }"
+            >
+              {{ "Dashboard" | translate }}</span
+            >
+          </h4>
         </div>
-        <div class="m-3" *ngIf="!sideNavFirst">
-          <app-search-users></app-search-users>
-          <app-usertable [users]="allUsers"></app-usertable>
-          <app-search-charts></app-search-charts>
+        <div
+          (click)="sidenav(false)"
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          [ngClass]="{ 'd-flex-arabic': isArabicLanguage }"
+        >
+          <h4
+            class="text-90"
+            [ngClass]="{
+              'flex-row-reverse': isArabicLanguage,
+              'flex-row': !isArabicLanguage
+            }"
+          >
+            <i
+              class="pi pi-users p-mr-2"
+              [ngClass]="{ 'm-l': isArabicLanguage }"
+            ></i
+            ><span
+              class="ml-1"
+              [ngClass]="{
+                'zain-bold': isArabicLanguage,
+                'text-90': isArabicLanguage,
+                'd-flex-arabic': isArabicLanguage
+              }"
+            >
+              {{ "Users" | translate }}</span
+            >
+          </h4>
+        </div>
+        <p
+          class="text-bluegray-700 text-xl font-bold ml-1"
+          [ngClass]="{
+            'zain-bold': isArabicLanguage,
+            'text-90': isArabicLanguage,
+            'd-flex-arabic': isArabicLanguage
+          }"
+        >
+          {{ "Theme" | translate }}
+        </p>
+
+        <div class="hr"></div>
+        <div
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          (click)="toggleTheme(false)"
+          [ngClass]="{ 'd-flex-arabic': isArabicLanguage }"
+        >
+          <h4
+            class="text-90 d-flex"
+            [ngClass]="{
+              'flex-row-reverse': isArabicLanguage,
+              'flex-row': !isArabicLanguage
+            }"
+          >
+            <i class="pi pi-sun" [ngClass]="{ 'm-l': isArabicLanguage }"></i>
+            <span
+              class="ml-1"
+              [ngClass]="{
+                'zain-bold': isArabicLanguage,
+                'text-90': isArabicLanguage
+              }"
+            >
+              {{ "Light" | translate }}
+            </span>
+          </h4>
+        </div>
+
+        <div
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          (click)="toggleTheme(true)"
+          [ngClass]="{ 'd-flex-arabic': isArabicLanguage }"
+        >
+          <h4
+            class="text-90"
+            [ngClass]="{
+              'flex-row-reverse': isArabicLanguage,
+              'flex-row': !isArabicLanguage
+            }"
+          >
+            <i
+              class="pi pi-moon p-mr-2"
+              [ngClass]="{ 'm-l': isArabicLanguage }"
+            ></i
+            ><span
+              class="ml-1"
+              [ngClass]="{
+                'zain-bold': isArabicLanguage,
+                'text-90': isArabicLanguage,
+                'd-flex-arabic': isArabicLanguage
+              }"
+              >{{ "Dark" | translate }}</span
+            >
+          </h4>
+        </div>
+        <p
+          class="text-bluegray-700 text-xl font-bold ml-1"
+          [ngClass]="{
+            'zain-bold': isArabicLanguage,
+            'text-90': isArabicLanguage,
+            'd-flex-arabic': isArabicLanguage
+          }"
+        >
+          {{ "Translation" | translate }}
+        </p>
+
+        <div class="hr"></div>
+        <div
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          (click)="switchLanguage('en')"
+          [ngClass]="{ 'd-flex-arabic': isArabicLanguage }"
+        >
+          <h4
+            class="text-90"
+            [ngClass]="{
+              'flex-row-reverse': isArabicLanguage,
+              'flex-row': !isArabicLanguage
+            }"
+          >
+            <i
+              class="pi pi-language p-mr-2"
+              [ngClass]="{ 'm-l': isArabicLanguage }"
+            ></i
+            ><span
+              class="ml-1"
+              [ngClass]="{
+                'zain-bold': isArabicLanguage,
+                'text-90': isArabicLanguage,
+                'd-flex-arabic': isArabicLanguage
+              }"
+              >{{ "English" | translate }}</span
+            >
+          </h4>
+        </div>
+        <div
+          class="item hover-item text-white p-3 my-3 border-round cursor-pointer flex"
+          (click)="switchLanguage('ar')"
+          [ngClass]="{ 'd-flex-arabic': isArabicLanguage }"
+        >
+          <h4
+            class="text-90"
+            [ngClass]="{
+              'flex-row-reverse': isArabicLanguage,
+              'flex-row': !isArabicLanguage
+            }"
+          >
+            <i
+              class="pi pi-language p-mr-2"
+              [ngClass]="{ 'm-l': isArabicLanguage }"
+            ></i>
+            <span
+              class="ml-1"
+              [ngClass]="{
+                'zain-bold': isArabicLanguage,
+                'text-90': isArabicLanguage
+              }"
+            >
+              {{ "Arabic" | translate }}
+            </span>
+          </h4>
         </div>
       </div>
     </div>
   </div>
+  <!-- Main Content Section -->
+  <div
+    class="p-0"
+    [ngClass]="{
+      'col-10 content p-0': sideNavSec,
+      'col-12 contents p-0': !sideNavSec,
+      'margin-16': !isArabicLanguage && sideNavSec,
+      'margin-0': isArabicLanguage
+    }"
+  >
+    <!-- Pass the currentSection to NavBoardComponent -->
+    <app-nav-board
+      [currentSection]="currentSection"
+      (sidebarToggle)="toggleSidebar()"
+    ></app-nav-board>
+
+    <!-- Dynamic Content Based on SideNav -->
+    <div>
+      <div class="m-3" *ngIf="sideNavFirst">
+        <app-usersdashboard></app-usersdashboard>
+        <app-usertable [users]="fiveUsers"></app-usertable>
+        <app-traffic-chart></app-traffic-chart>
+      </div>
+      <div class="m-3" *ngIf="!sideNavFirst">
+        <app-search-users></app-search-users>
+        <app-usertable [users]="allUsers"></app-usertable>
+        <app-search-charts></app-search-charts>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,17 +2,35 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import * as echarts from 'echarts';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-usersdashboard',
   standalone: true,
-  imports: [CommonModule,BreadcrumbModule],
+  imports: [CommonModule,BreadcrumbModule,TranslateModule],
   templateUrl: './usersdashboard.component.html',
   styleUrls: ['./usersdashboard.component.css']
 })
 export class UsersdashboardComponent {
   sideNav: boolean = true; // حالة القائمة الجانبية
   currentSection: string = 'Dashboard'; // القسم الافتراضي
+  isArabicLanguage: boolean = false;
+  constructor(
+    private translate: TranslateService,
+    
+  ) {
+    this.translate.setDefaultLang('en'); // اللغة الافتراضية
+    this.updateLanguageState(this.translate.getDefaultLang());
+  }
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+    this.updateLanguageState(lang);
+  }
+
+  private updateLanguageState(lang: string): void {
+    this.isArabicLanguage = lang === 'ar';
+  }
 
   sidenav(section: boolean) {
     this.sideNav = section;

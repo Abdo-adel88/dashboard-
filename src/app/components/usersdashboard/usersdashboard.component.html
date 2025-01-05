@@ -10,7 +10,7 @@
                 <div class="flex justify-content-between align-items-center mb-1">
                     <div>
                         <h3>26K (-4.4% ↓)</h3>
-                        <span class="mt-2">Users</span>
+                        <span class="mt-2" [ngClass]="{'zain-bold': isArabicLanguage,'text-2xl':isArabicLanguage}">{{ 'Users' | translate }}</span>
                     </div>
                     <i class="pi pi-chart-line" style="font-size: 2.5rem; color: white;"></i>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="flex justify-content-between align-items-center mb-1">
                     <div>
                         <h3>$6,200 (40.9% ↑)</h3>
-                        <span class="mt-2">Income</span>
+                        <span class="mt-2" [ngClass]="{'zain-bold': isArabicLanguage,'text-9':isArabicLanguage}">{{ 'Income' | translate }}</span>
                     </div>
                     <i class="pi pi-dollar" style="font-size: 2.5rem; color: white;"></i>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="flex justify-content-between align-items-center mb-1">
                     <div>
                         <h3>2.49% (84.7% ↑)</h3>
-                        <span class="mt-2">Conversion Rate</span>
+                        <span class="mt-2" [ngClass]="{'zain-bold': isArabicLanguage,'text-9':isArabicLanguage}">{{ 'ConversionRate' | translate }}</span>
 
                     </div>
                     <i class="pi pi-percentage" style="font-size: 2.5rem; color: white;"></i>
@@ -53,7 +53,7 @@
                 <div class="flex justify-content-between align-items-center mb-1">
                     <div>
                         <h3 >44K (-23.6% ↓)</h3>
-                        <span class="mt-2">Sessions</span>
+                        <span class="mt-2" [ngClass]="{'zain-bold': isArabicLanguage,'text-9':isArabicLanguage}">{{ 'Sessions' | translate }}</span>
 
                     </div>
                     <i class="pi pi-chart-bar" style="font-size: 2.5rem; color: white;"></i>

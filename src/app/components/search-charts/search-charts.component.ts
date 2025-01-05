@@ -5,11 +5,12 @@ import usersData from 'src/assets/data/users-data.json';
 import { SharedService } from 'src/app/service/shared.service';
 import { BarChartComponent } from '../bar-chart/bar-chart.component';
 import { LineChartComponent } from '../line-chart/line-chart.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-search-charts',
   standalone: true,
-  imports: [CommonModule,BarChartComponent,LineChartComponent],
+  imports: [CommonModule,BarChartComponent,LineChartComponent,TranslateModule,],
   templateUrl: './search-charts.component.html',
   styleUrls: ['./search-charts.component.css'],
 })
@@ -17,8 +18,23 @@ export class SearchChartsComponent  {
   private allData = usersData; // البيانات الكاملة
   filteredData = this.allData; // البيانات المفلترة
 
-  constructor(private sharedService: SharedService) {}
+  isArabicLanguage: boolean = false;
+  constructor(
+    private translate: TranslateService,
+    private sharedService: SharedService
+  ) {
+    this.translate.setDefaultLang('en'); // اللغة الافتراضية
+    this.updateLanguageState(this.translate.getDefaultLang());
+  }
 
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+    this.updateLanguageState(lang);
+  }
+
+  private updateLanguageState(lang: string): void {
+    this.isArabicLanguage = lang === 'ar';
+  }
   ngOnInit() {
     // الاشتراك في النص من الخدمة
     this.sharedService.currentSearchText.subscribe((searchText) => {

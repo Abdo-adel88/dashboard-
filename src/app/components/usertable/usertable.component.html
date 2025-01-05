@@ -8,12 +8,12 @@
              class="custom-table w-full h-fit overflow-x-hidden   border-round-top-3xl">
         <ng-template pTemplate="header">
             <tr>
-                <th>User</th>
-                <th>Country</th>
-                <th>Usage</th>
-                <th>Payment Method</th>
-                <th>Activity</th>
-                <th>Activities</th>
+                <th  [ngClass]="{'zain-bold': isArabicLanguage,'text-90':isArabicLanguage}">{{ 'User' | translate }}</th>
+                <th [ngClass]="{'zain-bold': isArabicLanguage,'text-90':isArabicLanguage}">{{ 'Country' | translate }}</th>
+                <th [ngClass]="{'zain-bold': isArabicLanguage,'text-90':isArabicLanguage}">{{ 'Usage' | translate }}</th>
+                <th [ngClass]="{'zain-bold': isArabicLanguage,'text-90':isArabicLanguage}">{{ 'PaymentMethod' | translate }}</th>
+                <th [ngClass]="{'zain-bold': isArabicLanguage,'text-90':isArabicLanguage}">{{ 'Activity' | translate }}</th>
+                <th [ngClass]="{'zain-bold': isArabicLanguage,'text-90':isArabicLanguage}">{{ 'Activities' | translate }}</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-user>
